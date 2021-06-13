@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import { Link } from 'gatsby-theme-material-ui';
 import ProTip from '../components/ProTip';
 import Copyright from '../components/Copyright';
-import MainContainer from '../components/MainContainer';
+import MainContainer from '../components/MainContainerv2';
 
 export default function Promocao() {
   return (

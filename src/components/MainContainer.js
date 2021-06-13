@@ -37,6 +37,8 @@ export default function MainContainer({ children }) {
             <Button href="/">Home</Button>
             <Button href="/promocao">Promoções</Button>
             <Button href="/cupons">Cupons</Button>
+            <Button href="/cupons">Cupons</Button>
+            <Button href="/cupons">Cupons</Button>
           </ButtonGroup>
         </Container>
       </Headroom>

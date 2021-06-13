@@ -4,13 +4,15 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "latest",
+    "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
     "gatsby": "latest",
     "gatsby-theme-material-ui": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-headroom": "^3.1.1",
-    "react-helmet": "latest"
+    "react-helmet": "latest",
+    "react-router-dom": "^5.2.0"
   },
   "scripts": {
     "develop": "gatsby develop",

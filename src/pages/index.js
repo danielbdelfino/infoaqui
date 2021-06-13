@@ -13,31 +13,34 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import BackgroundHeader from '../images/robot_banner.png';
 import LogoHeader from '../images/logo_headersmall.png';
-import MainContainer from '../components/MainContainer';
+import MainContainer from '../components/MainContainerv2';
+import api from '../components/api/crawlerapi'
 
 export default function Index() {
   const [contents, setContents] = useState([{ link: '', link_image: '', title: '' }]);
   // const [init, setInit] = useState('');
 
-  async function games() {
-    // const apiUrl = 'http://localhost:3000/games'
-    // fetch(apiUrl)
-    //   .then((response) => response.json())
-    //   .then((data) => console.log('This is your data', data))
+  // async function games() {
+  //   // const apiUrl = 'http://localhost:3000/games'
+  //   // fetch(apiUrl)
+  //   //   .then((response) => response.json())
+  //   //   .then((data) => console.log('This is your data', data))
 
-    await axios.get(`http://localhost:3000/games`, {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json"
-      }
-    }).then(res => {
-      console.log(res.data.results);
-      setContents(res.data.results);
-    })
-  };
+  //   await axios.get(`http://localhost:3000/games`, {
+  //     headers: {
+  //       "Access-Control-Allow-Origin": "*",
+  //       "Content-Type": "application/json"
+  //     }
+  //   }).then(res => {
+  //     console.log(res.data.results);
+  //     setContents(res.data.results);
+  //   })
+  // };
 
   useEffect(() => {
-    games();
+    //games();
+    api.getGames((results) => setContents(results))
+
   }, []); //o parâmetro com array vazio faz com que o useEffect() seja executado apenas uma vez
 
   // setInit('start');
