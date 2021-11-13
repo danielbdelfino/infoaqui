@@ -7,7 +7,7 @@ import ProTip from '../components/ProTip';
 import Copyright from '../components/Copyright';
 import MainContainer from '../components/MainContainerv2';
 
-export default function Promocao() {
+export default function Cupons() {
   return (
     <MainContainer>
       <Container maxWidth="sm">

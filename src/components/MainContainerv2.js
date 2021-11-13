@@ -33,6 +33,8 @@ import ComputerIcon from '@material-ui/icons/Computer';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import { Link } from 'gatsby-theme-material-ui';
+import { navigate } from "gatsby"
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -100,6 +102,12 @@ const useStyles = makeStyles((theme) => ({
   },
   iconButton: {
     "& .MuiIconButton-label": { fontSize: '19px' }
+  },
+  styleAnchor: {
+    'text-decoration': 'inherit',
+    color: 'inherit',
+    cursor: 'auto',
+    width: '100%'
   }
 }));
 
@@ -128,6 +136,15 @@ export default function MainContainerv2({ children }) {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const onClickItemMenu = (event, destiny) => {
+    //console.log(destiny);
+    // if (anchorRef.current && anchorRef.current.contains(event.target)) {
+    //   return;
+    // }
+
+    navigate(destiny, {replace: true });
+  };
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -154,6 +171,9 @@ export default function MainContainerv2({ children }) {
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
+      style={{
+        zIndex: 99999999,
+      }}
     >
       <MenuItem>
         <IconButton className={classes.iconButton} color="inherit" href="/" rel="noopener noreferrer">
@@ -179,8 +199,8 @@ export default function MainContainerv2({ children }) {
         </IconButton>
         <p>Entretenimento</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
+      <MenuItem onClick={(event) => onClickItemMenu(event, '/games')}>
+        <IconButton className={classes.iconButton} color="inherit" rel="noopener noreferrer">
           <SportsEsportsIcon />
         </IconButton>
         <p>Games</p>
@@ -191,10 +211,11 @@ export default function MainContainerv2({ children }) {
         </IconButton>
         <p>Promoções</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton className={classes.iconButton} color="inherit" href="/cupons" rel="noopener noreferrer">
+      <MenuItem onClick={(event) => onClickItemMenu(event, '/cupons')}>
+        <IconButton className={classes.iconButton} color="inherit"  rel="noopener noreferrer">
           <MoneyOffIcon />
         </IconButton>
+        {/* <Link to="/cupons" className={classes.style} >Cupons</Link> */}
         <p>Cupons</p>
       </MenuItem>
       {/* <MenuItem onClick={handleProfileMenuOpen}>
@@ -218,6 +239,7 @@ export default function MainContainerv2({ children }) {
         onUnpin={() => console.log('unpinned')}
         wrapperStyle={{ marginBottom: 2 }}
         style={{
+          zIndex: 9999999,
           background: 'rgb(66, 168, 236)',
           boxShadow: '1px 1px 1px rgba(0,0,0,0.25)',
           display: 'flex'
@@ -265,7 +287,7 @@ export default function MainContainerv2({ children }) {
                 <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
                   <EmojiEmotionsIcon />Entretenimento
                 </IconButton>
-                <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
+                <IconButton className={classes.iconButton} color="inherit" href="/games" rel="noopener noreferrer">
                   <SportsEsportsIcon />Games
                 </IconButton>
                 <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">

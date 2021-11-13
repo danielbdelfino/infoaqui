@@ -8,6 +8,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { FacebookProvider, ShareButton, Share } from 'react-facebook';
+import Avatar from "@material-ui/core/Avatar";
+//import faviconmeups from "../images/favicons/faviconmeups.png"
+import iconUri from "./util/iconsfromuri"
 
 const useStyles = makeStyles({
   root: {
@@ -15,7 +18,8 @@ const useStyles = makeStyles({
     height: 340
   },
   media: {
-    height: 140,
+    height: 250,
+    position: "relative"
   },
   actionArea: {
     height: 340
@@ -24,14 +28,35 @@ const useStyles = makeStyles({
     bottom: '10px',
     position: 'absolute',
     marginLeft: '15px'
+  },
+  title: {
+    position: "absolute",
+    bottom: "0px",
+    color: "white",
+    background: "rgba(0, 0, 0, 0.4)",
+    marginBottom: "0px"
+  },
+  infosPage: {
+    clear: "both",
+    display: "flex",
+    align: "vertical",
+    "text-align": "center",
+    "align-items": "center"
+  },
+  avatar: {
+    width: "24px", 
+    height: "24px"
+  },
+  urlPage: {
+    marginLeft: "4px"
   }
 });
 
-export default function MediaCard(props) {
+export default function CardOverText(props) {
   const classes = useStyles();
 
   // console.log(props);
-  const { link, link_image, title, self_path, id } = props.props;
+  const { link, link_image, title, self_path, id, name } = props.props;
   // console.log(link);
   // console.log(link_image);
   // console.log(title);
@@ -39,33 +64,45 @@ export default function MediaCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea 
+      <CardActionArea
         // href={link}
         href={'/p?id=' + id + '&page=' + self_path}
-        target="_blank" 
+        target="_blank"
         className={classes.actionArea}>
         <CardMedia
           className={classes.media}
           // image="/static/images/cards/contemplative-reptile.jpg"
           image={link_image}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          title="Contemplative Reptile">
+          <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
             {title}
             {/* {title.substring(0, 30) + '(...)'} */}
           </Typography>
+        </CardMedia>
+        <CardContent>
+        <div className={classes.infosPage}>
+            <Avatar
+              className={classes.avatar}
+              alt="Remy Sharp"
+              src={iconUri.getIconFromUri(name)}
+            />
+            <Typography gutterBottom className={classes.urlPage}>
+              {iconUri.getUriClean(name)}
+            </Typography>
+          </div>
+          {/* <Typography gutterBottom variant="h5" component="h2">
+            {title}
+          </Typography> */}
           {/* <Typography variant="body2" color="textSecondary" component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
             across all continents except Antarctica
           </Typography> */}
         </CardContent>
-        <FacebookProvider appId="2891194764529737">
-          {/* <ShareButton href={self_path} className={classes.shareButton}> */}
-          <ShareButton href="http://localhost:8000/p?id=100&page=monster-hunter-animacao-da-netflix-ganha-data" className={classes.shareButton}>
+        {/* <FacebookProvider appId="2891194764529737">
+          <ShareButton href={self_path} className={classes.shareButton}>
             Compartilhar
           </ShareButton>
-        </FacebookProvider>
+        </FacebookProvider> */}
       </CardActionArea>
       {/* <CardActions>
         <FacebookProvider appId="2891194764529737">
@@ -75,15 +112,15 @@ export default function MediaCard(props) {
         </FacebookProvider>
       </CardActions> */}
       {/* <CardActions> */}
-        {/* <Button size="small" color="primary">
+      {/* <Button size="small" color="primary">
           Share
         </Button> */}
-        {/* <a href={link} target="_blank" >
+      {/* <a href={link} target="_blank" >
           <Button size="small" color="primary">
             Leia mais...
           </Button>
         </a> */}
-        {/* <Button variant="contained" color="primary" href={link} target="_blank">
+      {/* <Button variant="contained" color="primary" href={link} target="_blank">
           Veja mais
         </Button> */}
       {/* </CardActions> */}

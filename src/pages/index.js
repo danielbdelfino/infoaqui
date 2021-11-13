@@ -6,6 +6,8 @@ import Box from '@material-ui/core/Box';
 import ProTip from '../components/ProTip';
 import Copyright from '../components/Copyright';
 import MediaCard from '../components/Card';
+import News3CardDemo from '../components/News3CardDemo';
+import CardOverText from '../components/CardOverText';
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import Headroom from 'react-headroom';
@@ -106,12 +108,16 @@ export default function Index() {
           {/* <Link to="/about" color="secondary">
             Go to the about page
           </Link> */}
-          <Grid container spacing={3}>
+          <Grid container spacing={4}>
+          {/* <Grid container spacing={3}> */}
             {
               (contents != null && contents.length > 0) &&
               contents.map(element =>
-                <Grid content item xs={12} sm={3}>
-                  <MediaCard props={element}></MediaCard>
+                <Grid content item xs={12} sm={4}>
+                {/* <Grid content item xs={12} sm={3}> */}
+                  {/* <CardOverText props={element}></CardOverText> */}
+                  <News3CardDemo props={ element }></News3CardDemo>
+                  {/* <MediaCard props={element}></MediaCard> */}
                 </Grid>
               )
             }
