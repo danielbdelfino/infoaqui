@@ -175,26 +175,26 @@ export default function MainContainerv2({ children }) {
         zIndex: 99999999,
       }}
     >
-      <MenuItem>
-        <IconButton className={classes.iconButton} color="inherit" href="/" rel="noopener noreferrer">
+      <MenuItem onClick={(event) => onClickItemMenu(event, '/')} >
+        <IconButton className={classes.iconButton} color="inherit" rel="noopener noreferrer">
           <HomeIcon />
         </IconButton>
         <p>Início</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
+      <MenuItem onClick={(event) => onClickItemMenu(event, '/noticias')}>
+        <IconButton className={classes.iconButton} color="inherit" rel="noopener noreferrer">
           <LibraryBooksIcon />
         </IconButton>
         <p>Notícias</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
+      <MenuItem onClick={(event) => onClickItemMenu(event, '/tecnologia')}>
+        <IconButton className={classes.iconButton} color="inherit" rel="noopener noreferrer">
           <ComputerIcon />
         </IconButton>
         <p>Tecnologia</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
+      <MenuItem onClick={(event) => onClickItemMenu(event, '/entretenimento')}>
+        <IconButton className={classes.iconButton} color="inherit" rel="noopener noreferrer">
           <EmojiEmotionsIcon />
         </IconButton>
         <p>Entretenimento</p>
@@ -205,8 +205,8 @@ export default function MainContainerv2({ children }) {
         </IconButton>
         <p>Games</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
+      <MenuItem onClick={(event) => onClickItemMenu(event, '/promocao')}>
+        <IconButton className={classes.iconButton} color="inherit" rel="noopener noreferrer">
           <MonetizationOnIcon />
         </IconButton>
         <p>Promoções</p>
@@ -262,29 +262,29 @@ export default function MainContainerv2({ children }) {
               </Typography>
               <div className={classes.search}>
                 <div className={classes.searchIcon}>
-                  <SearchIcon />
+                  {/* <SearchIcon /> */}
                 </div>
-                <InputBase
+                {/* <InputBase
                   placeholder="Pesquisar…"
                   classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,
                   }}
                   inputProps={{ 'aria-label': 'search' }}
-                />
+                /> */}
               </div>
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
                 <IconButton className={classes.iconButton} color="inherit" href="/" rel="noopener noreferrer">
                   <HomeIcon />Início
                 </IconButton>
-                <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
+                <IconButton className={classes.iconButton} color="inherit" href="/noticias" rel="noopener noreferrer">
                   <LibraryBooksIcon />Notícias
                 </IconButton>
-                <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
+                <IconButton className={classes.iconButton} color="inherit" href="/tecnologia" rel="noopener noreferrer">
                   <ComputerIcon />Tecnologia
                 </IconButton>
-                <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
+                <IconButton className={classes.iconButton} color="inherit" href="/entretenimento" rel="noopener noreferrer">
                   <EmojiEmotionsIcon />Entretenimento
                 </IconButton>
                 <IconButton className={classes.iconButton} color="inherit" href="/games" rel="noopener noreferrer">

@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import { Link } from 'gatsby-theme-material-ui';
-import ProTip from '../components/ProTip';
-import Copyright from '../components/Copyright';
-import MainContainer from '../components/MainContainerv2';
 import Grid from '@material-ui/core/Grid';
-import MediaCard from '../components/Card';
-import News3CardDemo from '../components/News3CardDemo';
-import api from '../components/api/crawlerapi'
-import { useQueryParam, NumberParam, StringParam } from "use-query-params";
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import React, { useEffect, useState } from 'react';
+import { FacebookIcon, FacebookShareButton } from 'react-share';
+import { StringParam, useQueryParam } from "use-query-params";
+import api from '../components/api/crawlerapi';
+import MainContainer from '../components/MainContainerv2';
+import News3CardDemo from '../components/News3CardDemo';
 import SEO from '../components/seo';
-import { FacebookShareButton, FacebookIcon } from 'react-share';
 
 const useStyles = makeStyles(() => ({
   title: {

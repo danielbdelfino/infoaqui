@@ -2,7 +2,7 @@ import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import React, { useEffect, useState } from 'react';
 import api from '../components/api/crawlerapi';
 import MainContainer from '../components/MainContainerv2';
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Games() {
+export default function Noticias() {
   const styles = useStyles();
   const [contents, setContents] = useState([{ link: '', link_image: '', title: '' }]);
   const [nextPage, setNextPage] = useState(12);
@@ -28,22 +28,22 @@ export default function Games() {
   const loadMore = () => {
     setNextPage(nextPage + 12);
 
-    api.getType('games', nextPage, (results) => {
+    api.getType('news', nextPage, (results) => {
       var newContents = contents.concat(results);
       setContents(newContents);
     });
   };
 
   useEffect(() => {
-    api.getType('games', undefined, (results) => setContents(results));
+    api.getType('news', undefined, (results) => setContents(results));
   }, []);
 
   return (
     <MainContainer>
       <Chip
         className={styles.titlePage}
-        icon={<SportsEsportsIcon />}
-        label="Games"
+        icon={<LibraryBooksIcon />}
+        label="Notícias"
       />
       
       <div style={{ paddingTop: '35px' }}>

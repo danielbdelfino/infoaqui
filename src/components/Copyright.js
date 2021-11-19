@@ -24,8 +24,8 @@ export default function Copyright() {
     <div className={classes.root} color="primary">
       <Typography variant="body2" color="background" align="center" className={classes.tipStyle}>
         {'Copyright © '}
-        <Link color="inherit" href="https://www.infoaqui.net/">
-          www.infoaqui.net
+        <Link color="inherit" href="https://www.infoaqui.net.br/">
+          www.infoaqui.net.br
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}

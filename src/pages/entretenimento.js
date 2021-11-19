@@ -2,11 +2,12 @@ import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
+import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import React, { useEffect, useState } from 'react';
 import api from '../components/api/crawlerapi';
 import MainContainer from '../components/MainContainerv2';
 import News3CardDemo from '../components/News3CardDemo';
+import { types } from "../components/util/constants";
 
 const useStyles = makeStyles((theme) => ({
   titlePage: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Games() {
+export default function Entretenimento() {
   const styles = useStyles();
   const [contents, setContents] = useState([{ link: '', link_image: '', title: '' }]);
   const [nextPage, setNextPage] = useState(12);
@@ -28,22 +29,22 @@ export default function Games() {
   const loadMore = () => {
     setNextPage(nextPage + 12);
 
-    api.getType('games', nextPage, (results) => {
+    api.getType(types.entertainment, nextPage, (results) => {
       var newContents = contents.concat(results);
       setContents(newContents);
     });
   };
 
   useEffect(() => {
-    api.getType('games', undefined, (results) => setContents(results));
+    api.getType(types.entertainment, undefined, (results) => setContents(results));
   }, []);
 
   return (
     <MainContainer>
       <Chip
         className={styles.titlePage}
-        icon={<SportsEsportsIcon />}
-        label="Games"
+        icon={<EmojiEmotionsIcon />}
+        label="Entretenimento"
       />
       
       <div style={{ paddingTop: '35px' }}>

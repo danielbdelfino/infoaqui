@@ -117,6 +117,14 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const normalizeTitle = function(title, details) {
+  if (!details && title.length > 80) {
+    title = title.substring(0, 80) + '...';
+  }
+
+  return title;
+}
+
 export const News3CardDemo = React.memo(function News3Card(props) {
   const { pathname, uri } = useLocation();
   console.log(pathname);
@@ -149,7 +157,7 @@ export const News3CardDemo = React.memo(function News3Card(props) {
             <div className={styles.content}>
               <div className={styles.tag}>{iconUri.getUriClean(name)}</div>
               <Typography variant={'h2'} className={styles.title}>
-                {title}
+                {normalizeTitle(title, details)}
               </Typography>
             </div>
           </Box>
