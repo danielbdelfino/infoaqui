@@ -36,10 +36,10 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 #RUN npm install --silent
-COPY . ./
-RUN npm install
+# COPY . ./
+# RUN npm install
 # add app
-COPY . ./
+# COPY . ./
 # RUN npm run build
 # CMD ["npm", "run", "serve"]
 # RUN npm install react-scripts@3.4.1 -g --silent
