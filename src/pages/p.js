@@ -42,12 +42,12 @@ export default function P() {
   //console.log(params);
   const page = useQueryParam("page", StringParam)[0];
   const id = useQueryParam("id", StringParam)[0];
-  console.log("page: " + page);
-  console.log("id: " + id);
+  // console.log("page: " + page);
+  // console.log("id: " + id);
   //console.log(props.location.pathname);
 
   const updateContents = (detail) => {
-    console.log(detail);
+    // console.log(detail);
     api.getType(detail.type, undefined, (results) => setContents(results));
   };
 
@@ -82,7 +82,7 @@ export default function P() {
             Compartilhe
           </Typography>
           <FacebookShareButton
-            url="http://infoaqui.net.br/p/?id=121&page=epic-games-confirma-ariana-grande-em-fortnite"
+            url="http://www.infoaqui.net.br/p/?id=121&page=epic-games-confirma-ariana-grande-em-fortnite"
             quote={pageDetails.title}
           >
             <FacebookIcon

@@ -7,13 +7,13 @@ const api = {
         //   .then((response) => response.json())
         //   .then((data) => console.log('This is your data', data))
 
-        await axios.get(process.env.URL_API_CONTENT + `/games`, {
+        await axios.get(process.env.URL_API_CONTENT + `/api/v1/games`, {
             headers: {
                 // "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json"
             }
         }).then(res => {
-            console.log(res.data.results);
+            // console.log(res.data.results);
             callback(res.data.results)
         })
     },
@@ -23,13 +23,13 @@ const api = {
         //   .then((response) => response.json())
         //   .then((data) => console.log('This is your data', data))
 
-        await axios.get(process.env.URL_API_CONTENT + `/news`, {
+        await axios.get(process.env.URL_API_CONTENT + `/api/v1/news`, {
             headers: {
                 // "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json"
             }
         }).then(res => {
-            console.log(res.data.results);
+            // console.log(res.data.results);
             callback(res.data.results)
         })
     },
@@ -39,13 +39,13 @@ const api = {
         //   .then((response) => response.json())
         //   .then((data) => console.log('This is your data', data))
 
-        await axios.get(process.env.URL_API_CONTENT + `/tecnology`, {
+        await axios.get(process.env.URL_API_CONTENT + `/api/v1/tecnology`, {
             headers: {
                 // "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json"
             }
         }).then(res => {
-            console.log(res.data.results);
+            // console.log(res.data.results);
             callback(res.data.results)
         })
     },
@@ -55,13 +55,13 @@ const api = {
         //   .then((response) => response.json())
         //   .then((data) => console.log('This is your data', data))
 
-        await axios.get(process.env.URL_API_CONTENT + `/entertainment`, {
+        await axios.get(process.env.URL_API_CONTENT + `/api/v1/entertainment`, {
             headers: {
                 // "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json"
             }
         }).then(res => {
-            console.log(res.data.results);
+            // console.log(res.data.results);
             callback(res.data.results)
         })
     },
@@ -70,7 +70,7 @@ const api = {
         // fetch(apiUrl)
         //   .then((response) => response.json())
         //   .then((data) => console.log('This is your data', data))
-        var url = process.env.URL_API_CONTENT + `/` + type;
+        var url = process.env.URL_API_CONTENT + `/api/v1/` + type;
         url += nextPage != undefined ? '?nextPage=' + nextPage : '' ;
 
         await axios.get(url, {
@@ -79,18 +79,18 @@ const api = {
                 "Content-Type": "application/json"
             }
         }).then(res => {
-            console.log(res.data.results);
+            // console.log(res.data.results);
             callback(res.data.results)
         })
     },
     getPageDetail: async function(id, page, callback) {
-        await axios.get(process.env.URL_API_CONTENT + `/pagedetail?id=`+ id + `&page=` + page, {
+        await axios.get(process.env.URL_API_CONTENT + `/api/v1/pagedetail?id=`+ id + `&page=` + page, {
             headers: {
                 // "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json"
             }
         }).then(res => {
-            console.log(res.data.results);
+            // console.log(res.data.results);
             callback(res.data.results)
         })
     }

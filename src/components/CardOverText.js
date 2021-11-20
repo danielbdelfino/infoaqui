@@ -52,7 +52,7 @@ const useStyles = makeStyles({
 export default function CardOverText(props) {
   const classes = useStyles();
   const { link, link_image, title, self_path, id, name } = props.props;
-  console.log(self_path);
+  // console.log(self_path);
 
   return (
     <Card className={classes.root}>

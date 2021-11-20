@@ -35,7 +35,7 @@ export default function MediaCard(props) {
   // console.log(link);
   // console.log(link_image);
   // console.log(title);
-  console.log(self_path);
+  // console.log(self_path);
 
   return (
     <Card className={classes.root}>

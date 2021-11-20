@@ -235,8 +235,8 @@ export default function MainContainerv2({ children }) {
   return (
     <div>
       <Headroom
-        onPin={() => console.log('pinned')}
-        onUnpin={() => console.log('unpinned')}
+        // onPin={() => console.log('pinned')}
+        // onUnpin={() => console.log('unpinned')}
         wrapperStyle={{ marginBottom: 2 }}
         style={{
           zIndex: 9999999,

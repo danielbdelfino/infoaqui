@@ -4,9 +4,10 @@ module.exports = {
     title: "Infoaqui",
     titleTemplate: "%s · Informção com qualidade",
     description:
-      "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
-    url: "http://localhost:8000", // No trailing slash allowed!
+      "InfoAqui - Conteúdo em um só lugar!",
+    url: "http://www.infoaqui.com.br", // No trailing slash allowed!
     image: "/images/infoaqui.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@danielbdelfino",
+    icon: 'src/images/touchwifi_small.png'
   },
 };

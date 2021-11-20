@@ -127,8 +127,8 @@ const normalizeTitle = function(title, details) {
 
 export const News3CardDemo = React.memo(function News3Card(props) {
   const { pathname, uri } = useLocation();
-  console.log(pathname);
-  console.log(uri);
+  // console.log(pathname);
+  // console.log(uri);
   const { link, link_image, title, self_path, id, name } = props.props;
   const { details } = props;
   const styles = useStyles();
