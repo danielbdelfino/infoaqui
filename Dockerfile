@@ -33,10 +33,10 @@ ENV PATH /app/node_modules/.bin:$PATH
 # RUN apt-get update
 
 # install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
+# COPY package.json ./
+# COPY package-lock.json ./
 #RUN npm install --silent
-# COPY . ./
+COPY . ./
 # RUN npm install
 # add app
 # COPY . ./
