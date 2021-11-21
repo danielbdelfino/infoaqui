@@ -56,6 +56,12 @@ const SEO = ({ title, description, image, article }) => {
       )}
 
       {seo.image && <meta name="twitter:image" content={seo.image} />}
+
+      <meta property="og:site_name" content="InfoAqui" />
+      <meta property="fb:app_id" content="2891194764529737" />
+      <meta property="fb:profile_id" content="https://www.facebook.com/InfoAqui-111126014574581" />
+      <meta property="fb:pages" content="111126014574581" />
+
     </Helmet>
   )
 }
