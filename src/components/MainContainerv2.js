@@ -199,11 +199,11 @@ export default function MainContainerv2({ children }) {
         </IconButton>
         <p>Entretenimento</p>
       </MenuItem>
-      <MenuItem onClick={(event) => onClickItemMenu(event, '/games')}>
+      <MenuItem onClick={(event) => onClickItemMenu(event, '/jogos')}>
         <IconButton className={classes.iconButton} color="inherit" rel="noopener noreferrer">
           <SportsEsportsIcon />
         </IconButton>
-        <p>Games</p>
+        <p>Jogos</p>
       </MenuItem>
       <MenuItem onClick={(event) => onClickItemMenu(event, '/promocao')}>
         <IconButton className={classes.iconButton} color="inherit" rel="noopener noreferrer">
@@ -287,8 +287,8 @@ export default function MainContainerv2({ children }) {
                 <IconButton className={classes.iconButton} color="inherit" href="/entretenimento" rel="noopener noreferrer">
                   <EmojiEmotionsIcon />Entretenimento
                 </IconButton>
-                <IconButton className={classes.iconButton} color="inherit" href="/games" rel="noopener noreferrer">
-                  <SportsEsportsIcon />Games
+                <IconButton className={classes.iconButton} color="inherit" href="/jogos" rel="noopener noreferrer">
+                  <SportsEsportsIcon />Jogos
                 </IconButton>
                 <IconButton className={classes.iconButton} color="inherit" href="/promocao" rel="noopener noreferrer">
                   <MonetizationOnIcon />Promoções

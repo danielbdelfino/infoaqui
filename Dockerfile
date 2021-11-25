@@ -1,4 +1,4 @@
-FROM node:14 as build-step
+FROM node:14-slim as build-step
 WORKDIR /app
 #EXPOSE 8000 9000
 

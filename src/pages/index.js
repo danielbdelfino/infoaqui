@@ -55,7 +55,7 @@ export default function Index() {
       <Chip
         className={styles.titlePage}
         icon={<SportsEsportsIcon />}
-        label="Games"
+        label="Jogos"
       />
       <Grid container spacing={4}>
         {
@@ -68,8 +68,8 @@ export default function Index() {
         }
       </Grid>
       <div className={styles.buttonStyle}>
-        <Button variant="outlined" color="primary" href="/games" >
-          Veja mais sobre Games...
+        <Button variant="outlined" color="primary" href="/jogos" >
+          Veja mais sobre Jogos...
         </Button>
       </div>
       {/* NEWS */}

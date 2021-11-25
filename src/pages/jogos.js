@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Games() {
+export default function Jogos() {
   const styles = useStyles();
   const [contents, setContents] = useState([{ link: '', link_image: '', title: '' }]);
   const [nextPage, setNextPage] = useState(12);
@@ -43,7 +43,7 @@ export default function Games() {
       <Chip
         className={styles.titlePage}
         icon={<SportsEsportsIcon />}
-        label="Games"
+        label="Jogos"
       />
       
       <div style={{ paddingTop: '35px' }}>
