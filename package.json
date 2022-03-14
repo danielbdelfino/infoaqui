@@ -32,7 +32,7 @@
     "developlocalip": "gatsby develop -H 192.168.0.109 -p 8000",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "start": "gatsby serve -80",
+    "start": "gatsby serve -p 80",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
   }
 }
