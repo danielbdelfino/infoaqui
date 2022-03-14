@@ -33,8 +33,5 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
-  },
-  "engines": {
-    "node": "^10.15.3"
   }
 }
